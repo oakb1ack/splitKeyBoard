@@ -12,13 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Initialize ZMK workspace
-        working-directory: src/firmware
         run: |
           west init -l config
           west update --fetch-opt=--filter=tree:0
           west zephyr-export
       - name: Build firmware
-        working-directory: src/firmware
         run: |
           west build -s zmk/app -d build -b seeeduino_xiao_ble -- \
             -DSHIELD=${{ matrix.shield }} -DZMK_CONFIG="$PWD/config"
@@ -26,5 +24,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.shield }}
-          path: src/firmware/build/zephyr/zmk.uf2
+          path: build/zephyr/zmk.uf2
           if-no-files-found: error
