@@ -8,6 +8,15 @@ connects to the left over Bluetooth.
 
 ## Hardware
 
+PCB renders from a local revision (the corresponding PCB edits are not yet committed):
+
+![Front of the split keyboard PCB](docs/pcb-front.png)
+![Back of the split keyboard PCB](docs/pcb-back.png)
+
+Left-half schematic ([open full size](docs/schematic-left.svg); [right half](docs/schematic-right.svg)):
+
+![Left-half schematic](docs/schematic-left.svg)
+
 Open [the KiCad project](src/pcb/pcb.kicad_pro) in KiCad 10. The included
 [Gerbers](src/pcb/Gerber-Files/) and [DRC report](src/pcb/DRC.rpt) are older
 exports. **Run electrical and design-rule checks, and regenerate the Gerbers
