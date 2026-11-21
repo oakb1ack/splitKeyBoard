@@ -1,18 +1,30 @@
-# ZMK firmware
+# Split keyboard ZMK firmware
 
-This directory is reserved for the keyboard's ZMK configuration and custom
-shield. No firmware has been configured or built yet.
+This configuration targets two XIAO nRF52840 controllers over Bluetooth. The
+left half is central and connects to the host; the right half is peripheral.
+The 42 bindings in `config/splitkeyboard.keymap` are deliberately `&none`.
+Replace them with your own bindings. Each group of five follows the schematic's
+matrix rows; the final two bindings are the outer switches SW63 and SW84.
+Switch references in the keymap identify the physical positions.
 
-The PCB design references a XIAO nRF52840. If that is the controller used,
-the current ZMK board target is `xiao_ble//zmk`.
+The shield is under `config/boards/shields/splitkeyboard` so the official ZMK
+build workflow can find it when the configuration is nested in this repository.
+The PCB netlist connects columns 0–4 to XIAO D1–D5 and rows 0–4 to D10–D6;
+the diode cathodes connect to the row nets. The shield assumes the PCB matches
+the schematic. Battery sensing and ZMK Studio are not configured.
 
-Follow the [new keyboard shield guide](https://zmk.dev/docs/hardware-integration/new-shield)
-to create a ZMK module in this directory. Define the split halves, matrix pins,
-diode direction, physical layout, and keymap from the actual PCB wiring. See
-the [local toolchain guide](https://zmk.dev/docs/development/local-toolchain/setup)
-to build and flash each half.
+Push changes to build both halves in GitHub Actions and download the firmware
+artifact from the completed run. Flash the matching left and right UF2 files
+to their controllers. No key will do anything until you write the keymap.
 
-For local builds, point `ZMK_CONFIG` at the absolute path to this directory's
-`config` folder and `ZMK_EXTRA_MODULES` at the absolute path to this directory
-when it contains the module's `zephyr/module.yml`. See the
-[build instructions](https://zmk.dev/docs/development/local-toolchain/build-flash).
+For a local ZMK workspace, build from its `zmk/app` directory using an absolute
+path to this repository's `src/firmware/config` directory:
+
+```sh
+west build -p -b seeeduino_xiao_ble -d build/left -- -DSHIELD=splitkeyboard_left -DZMK_CONFIG=/absolute/path/to/splitKeyBoard/src/firmware/config
+west build -p -b seeeduino_xiao_ble -d build/right -- -DSHIELD=splitkeyboard_right -DZMK_CONFIG=/absolute/path/to/splitKeyBoard/src/firmware/config
+```
+
+The config is pinned to ZMK v0.3; use the matching ZMK revision locally. See
+the [ZMK shield guide](https://zmk.dev/docs/hardware-integration/new-shield)
+and [build guide](https://zmk.dev/docs/development/local-toolchain/build-flash).

@@ -1,0 +1,10 @@
+file_format: "1"
+id: splitkeyboard
+name: Split Keyboard
+type: shield
+requires: [seeed_xiao]
+features:
+  - keys
+siblings:
+  - splitkeyboard_left
+  - splitkeyboard_right
