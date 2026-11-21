@@ -7,10 +7,10 @@
 
         default_layer {
             bindings = <
-&kp O          &kp I         &kp U   &kp Y         &kp T         &kp T         &kp R    &kp E      &kp W         &kp Q
+&kp O          &kp I         &kp U   &kp Y         &kp SPACE     &kp T         &kp R    &kp E      &kp W         &kp Q
 &kp SEMICOLON  &kp L         &kp K   &kp J         &kp H         &kp G         &kp F    &kp D      &kp S         &kp A
 &kp PERIOD     &kp COMMA     &kp M   &kp N         &kp B         &kp V         &kp C    &kp X      &kp Z         &kp LCTRL
-&kp SLASH      &kp NUMBER_6  &kp N5  &kp NUMBER_4  &kp NUMBER_3  &kp NUMBER_2  &kp TAB  &kp GRAVE  &kp LEFT_GUI  &kt LEFT_SHIFT
+&kp SLASH      &kp NUMBER_6  &kp N5  &kp NUMBER_4  &kp NUMBER_3  &kp NUMBER_2  &kp TAB  &kp BSPC   &kp ENTER     &kt LEFT_SHIFT
 &kp P                                                                                                            &kp NUMBER_1
             >;
         };
