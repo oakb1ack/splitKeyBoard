@@ -1,5 +1,14 @@
 /src/pcb/.history/
 
+# KiCad local files and automatic backups
+*kicad_pro.lck
+*kicad_sch.lck
+*kicad_pcb.lck
+_autosave-*
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*-backups/
+
 # Local ZMK/West workspace and build outputs
 /.west/
 /zmk/
@@ -8,3 +17,12 @@
 /tools/
 /bootloader/
 /build/
+
+# Firmware workspace and build outputs
+/src/firmware/.west/
+/src/firmware/zmk/
+/src/firmware/zephyr/
+/src/firmware/modules/
+/src/firmware/tools/
+/src/firmware/bootloader/
+/src/firmware/build/
