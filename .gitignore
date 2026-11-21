@@ -8,6 +8,8 @@ _autosave-*
 *.kicad_sch-bak
 *.kicad_pcb-bak
 *-backups/
+*.kicad_prl
+*-cache.lib
 
 # Local ZMK/West workspace and build outputs
 /.west/
