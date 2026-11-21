@@ -6,6 +6,9 @@ connects to the left over Bluetooth.
 
 ![Keyboard layout showing the switch references](docs/layout.svg)
 
+The project files are in [src/pcb](src/pcb/) and the ZMK configuration is in
+[src/firmware](src/firmware/).
+
 ## Hardware
 
 PCB renders from a local revision (the corresponding PCB edits are not yet committed):
@@ -25,7 +28,8 @@ before ordering.** The current board has unresolved DRC findings.
 ## Firmware
 
 1. Edit [the keymap](src/firmware/config/splitkeyboard.keymap) to choose your
-   bindings. The diagram shows the physical switch references.
+   bindings. The first 40 bindings follow four matrix rows; the
+   last two are the outer switches SW63 and SW84.
 2. Push your changes and download the left and right UF2 files from GitHub
    Actions. Flash each file to its matching controller.
 
@@ -41,5 +45,7 @@ The [Keymap Editor](https://nickcoutsos.github.io/keymap-editor/) GitHub
 integration expects a root-level `config` directory, so it cannot load this
 nested configuration directly. Battery sensing and ZMK Studio are not configured.
 
-Third-party libraries include their own licenses where supplied. No project-wide
-license has been specified.
+## License
+
+Project files are available under the [MIT License](LICENSE). Bundled
+third-party libraries retain their own licenses where provided.
