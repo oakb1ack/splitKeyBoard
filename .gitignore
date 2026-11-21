@@ -1,1 +1,10 @@
 /src/pcb/.history/
+
+# Local ZMK/West workspace and build outputs
+/src/firmware/.west/
+/src/firmware/zmk/
+/src/firmware/zephyr/
+/src/firmware/modules/
+/src/firmware/tools/
+/src/firmware/bootloader/
+/src/firmware/build/

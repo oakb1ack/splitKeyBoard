@@ -7,14 +7,14 @@ Replace them with your own bindings. Each group of five follows the schematic's
 matrix rows; the final two bindings are the outer switches SW63 and SW84.
 Switch references in the keymap identify the physical positions.
 
-The shield is under `config/boards/shields/splitkeyboard` so the official ZMK
-build workflow can find it when the configuration is nested in this repository.
+The shield is under `config/boards/shields/splitkeyboard` so ZMK can find it
+from the nested configuration directory.
 The PCB netlist connects columns 0–4 to XIAO D1–D5 and rows 0–4 to D10–D6;
 the diode cathodes connect to the row nets. The shield assumes the PCB matches
 the schematic. Battery sensing and ZMK Studio are not configured.
 
-Push changes to build both halves in GitHub Actions and download the firmware
-artifact from the completed run. Flash the matching left and right UF2 files
+Push changes to build both halves in GitHub Actions and download the left and right firmware
+artifacts from the completed run. Flash the matching left and right UF2 files
 to their controllers. No key will do anything until you write the keymap.
 
 For a local ZMK workspace, build from its `zmk/app` directory using an absolute
