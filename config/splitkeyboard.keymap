@@ -1,22 +1,17 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 
 / {
     keymap {
         compatible = "zmk,keymap";
+
         default_layer {
             bindings = <
-                // SW59 SW55 SW51 SW47 SW43        SW64 SW68 SW72 SW76 SW80
-                &none &none &none &none &none        &none &none &none &none &none
-                // SW60 SW56 SW52 SW48 SW44        SW65 SW69 SW73 SW77 SW81
-                &none &none &none &none &none        &none &none &none &none &none
-                // SW61 SW57 SW53 SW49 SW45        SW66 SW70 SW74 SW78 SW82
-                &none &none &none &none &none        &none &none &none &none &none
-                // SW62 SW58 SW54 SW50 SW46        SW67 SW71 SW75 SW79 SW83
-                &none &none &none &none &none        &none &none &none &none &none
-                // SW63                            SW84
-                &none                                &none
+&kp O          &kp I         &kp U   &kp Y         &kp T         &kp T         &kp R    &kp E      &kp W         &kp Q
+&kp SEMICOLON  &kp L         &kp K   &kp J         &kp H         &kp G         &kp F    &kp D      &kp S         &kp A
+&kp PERIOD     &kp COMMA     &kp M   &kp N         &kp B         &kp V         &kp C    &kp X      &kp Z         &kp LCTRL
+&kp SLASH      &kp NUMBER_6  &kp N5  &kp NUMBER_4  &kp NUMBER_3  &kp NUMBER_2  &kp TAB  &kp GRAVE  &kp LEFT_GUI  &kt LEFT_SHIFT
+&kp P                                                                                                            &kp NUMBER_1
             >;
         };
     };
